@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Access Restriction on movemnet within the country feature.
+ */
+
+include_once 'acc_restrictions.features.inc';
