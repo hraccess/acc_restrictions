@@ -121,8 +121,8 @@ function acc_restrictions_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'field_collection_item-field_status_of_request-field_request_denied_delayed_by'
-  $field_instances['field_collection_item-field_status_of_request-field_request_denied_delayed_by'] = array(
+  // Exported field_instance: 'field_collection_item-field_status_of_request-field_if_denied_delayed_by_whom'
+  $field_instances['field_collection_item-field_status_of_request-field_if_denied_delayed_by_whom'] = array(
     'bundle' => 'field_status_of_request',
     'default_value' => NULL,
     'deleted' => 0,
@@ -130,66 +130,27 @@ function acc_restrictions_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
         'weight' => 1,
-      ),
-      'entityreference_view_widget' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'ical' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
       ),
     ),
     'entity_type' => 'field_collection_item',
-    'field_name' => 'field_request_denied_delayed_by',
-    'label' => 'If denied/delayed, whom',
+    'field_name' => 'field_if_denied_delayed_by_whom',
+    'label' => 'If denied / delayed by whom',
     'required' => 0,
     'settings' => array(
-      'better_formats' => array(
-        'allowed_formats' => array(
-          'filtered_html' => 'filtered_html',
-          'full_html' => 'full_html',
-          'plain_text' => 'plain_text',
-          'simple' => 'simple',
-        ),
-        'allowed_formats_toggle' => 0,
-        'default_order_toggle' => 0,
-        'default_order_wrapper' => array(
-          'formats' => array(
-            'filtered_html' => array(
-              'weight' => 0,
-            ),
-            'full_html' => array(
-              'weight' => 0,
-            ),
-            'plain_text' => array(
-              'weight' => 10,
-            ),
-            'simple' => array(
-              'weight' => 0,
-            ),
-          ),
-        ),
-      ),
       'entity_translation_sync' => FALSE,
-      'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'size' => 60,
-      ),
-      'type' => 'text_textfield',
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
       'weight' => 2,
     ),
   );
@@ -889,7 +850,7 @@ function acc_restrictions_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_targetted_actor',
-    'label' => 'Travel permit requested by?',
+    'label' => 'Administrative request submited by',
     'required' => 1,
     'settings' => array(
       'behaviors' => array(
@@ -968,12 +929,13 @@ function acc_restrictions_field_default_field_instances() {
   // Included for use with string extractors like potx.
   t('A field replacing node title.');
   t('Access Constraints');
+  t('Administrative request submited by');
   t('Date');
   t('Description/Remarks');
   t('Geographical Location (Destination)');
   t('Geographical Location (Origin)');
   t('How many days did it take to get an answer (positive/negative)?');
-  t('If denied/delayed, whom');
+  t('If denied / delayed by whom');
   t('Impact');
   t('Mark on map');
   t('Purpose of the administrative request');
@@ -981,7 +943,6 @@ function acc_restrictions_field_default_field_instances() {
   t('Status of Request');
   t('Submission Status');
   t('Title');
-  t('Travel permit requested by?');
   t('Value');
 
   return $field_instances;

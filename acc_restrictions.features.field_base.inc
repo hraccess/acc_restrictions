@@ -211,6 +211,49 @@ function acc_restrictions_field_default_field_bases() {
     'type' => 'number_integer',
   );
 
+  // Exported field_base: 'field_if_denied_delayed_by_whom'
+  $field_bases['field_if_denied_delayed_by_whom'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_if_denied_delayed_by_whom',
+    'foreign keys' => array(
+      'node' => array(
+        'columns' => array(
+          'target_id' => 'nid',
+        ),
+        'table' => 'node',
+      ),
+    ),
+    'indexes' => array(
+      'target_id' => array(
+        0 => 'target_id',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'entityreference',
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'handler' => 'views',
+      'handler_settings' => array(
+        'behaviors' => array(
+          'views-select-list' => array(
+            'status' => 0,
+          ),
+        ),
+        'view' => array(
+          'args' => array(),
+          'display_name' => 'entityreference_2',
+          'view_name' => 'organizations_affected',
+        ),
+      ),
+      'target_type' => 'taxonomy_term',
+    ),
+    'translatable' => 0,
+    'type' => 'entityreference',
+  );
+
   // Exported field_base: 'field_incident_type_restriction'
   $field_bases['field_incident_type_restriction'] = array(
     'active' => 1,
@@ -273,39 +316,6 @@ function acc_restrictions_field_default_field_bases() {
     ),
     'translatable' => 0,
     'type' => 'geofield',
-  );
-
-  // Exported field_base: 'field_request_denied_delayed_by'
-  $field_bases['field_request_denied_delayed_by'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_request_denied_delayed_by',
-    'field_permissions' => array(
-      'type' => 0,
-    ),
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
-    'indexes' => array(
-      'format' => array(
-        0 => 'format',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'text',
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'max_length' => 255,
-    ),
-    'translatable' => 0,
-    'type' => 'text',
   );
 
   // Exported field_base: 'field_request_status'
