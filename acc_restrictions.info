@@ -16,7 +16,6 @@ features[ctools][] = strongarm:strongarm:1
 features[ctools][] = views:views_default:3.0
 features[features_api][] = api:1
 features[field_base][] = field_admin1_2
-features[field_base][] = field_br_req_within_country_impa
 features[field_base][] = field_br_req_within_impact
 features[field_base][] = field_date
 features[field_base][] = field_geographical_location_dest
@@ -94,3 +93,4 @@ features_exclude[field][field_collection_item-field_br_req_within_impact-field_v
 features_exclude[field][field_collection_item-field_status_of_request-field_request_denied_delayed_by] = field_collection_item-field_status_of_request-field_request_denied_delayed_by
 features_exclude[field][field_collection_item-field_status_of_request-field_request_status] = field_collection_item-field_status_of_request-field_request_status
 features_exclude[field][field_collection_item-field_status_of_request-field_if_denied_delayed_by_whom] = field_collection_item-field_status_of_request-field_if_denied_delayed_by_whom
+features_exclude[field_base][field_br_req_within_country_impa] = field_br_req_within_country_impa
