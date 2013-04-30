@@ -46,7 +46,7 @@ function acc_restrictions_views_default_views() {
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
   $handler->display->display_options['fields']['body']['field'] = 'body';
   $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
-  /* Field: Content: Date */
+  /* Field: Content: Incident Date */
   $handler->display->display_options['fields']['field_date']['id'] = 'field_date';
   $handler->display->display_options['fields']['field_date']['table'] = 'field_data_field_date';
   $handler->display->display_options['fields']['field_date']['field'] = 'field_date';
@@ -96,7 +96,7 @@ function acc_restrictions_views_default_views() {
     4 => 0,
     3 => 0,
   );
-  /* Filter criterion: Content: Date (field_date) */
+  /* Filter criterion: Content: Incident Date (field_date) */
   $handler->display->display_options['filters']['field_date_value']['id'] = 'field_date_value';
   $handler->display->display_options['filters']['field_date_value']['table'] = 'field_data_field_date';
   $handler->display->display_options['filters']['field_date_value']['field'] = 'field_date_value';
@@ -159,7 +159,7 @@ function acc_restrictions_views_default_views() {
     t('last »'),
     t('Title'),
     t('Description'),
-    t('Date'),
+    t('Incident Date'),
     t('Date Between'),
     t('Data export'),
   );

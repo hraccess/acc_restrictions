@@ -279,7 +279,7 @@ function acc_restrictions_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 10,
+      'weight' => 12,
     ),
   );
 
@@ -318,7 +318,7 @@ function acc_restrictions_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_admin1_2',
-    'label' => 'Geographical Location (Origin)',
+    'label' => 'Geographical Location (Destination)',
     'required' => 1,
     'settings' => array(
       'entity_translation_sync' => FALSE,
@@ -329,7 +329,7 @@ function acc_restrictions_field_default_field_instances() {
       'module' => 'hs_taxonomy',
       'settings' => array(),
       'type' => 'taxonomy_hs',
-      'weight' => 5,
+      'weight' => 6,
     ),
   );
 
@@ -387,7 +387,7 @@ function acc_restrictions_field_default_field_instances() {
       'module' => 'field_collection',
       'settings' => array(),
       'type' => 'field_collection_embed',
-      'weight' => 11,
+      'weight' => 13,
     ),
   );
 
@@ -536,21 +536,18 @@ function acc_restrictions_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_geographical_location_dest',
-    'label' => 'Geographical Location (Destination)',
+    'label' => 'Geographical Location (Origin)',
     'required' => 1,
     'settings' => array(
       'entity_translation_sync' => FALSE,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
-      'active' => 0,
+      'active' => 1,
       'module' => 'hs_taxonomy',
-      'settings' => array(
-        'autocomplete_path' => 'taxonomy/autocomplete',
-        'size' => 60,
-      ),
+      'settings' => array(),
       'type' => 'taxonomy_hs',
-      'weight' => 6,
+      'weight' => 5,
     ),
   );
 
@@ -597,7 +594,7 @@ function acc_restrictions_field_default_field_instances() {
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 8,
+      'weight' => 10,
     ),
   );
 
@@ -715,7 +712,90 @@ function acc_restrictions_field_default_field_instances() {
         ),
       ),
       'type' => 'geocoder',
-      'weight' => 13,
+      'weight' => 15,
+    ),
+  );
+
+  // Exported field_instance: 'node-bureaucratic_requirement_within_-field_request_status'
+  $field_instances['node-bureaucratic_requirement_within_-field_request_status'] = array(
+    'bundle' => 'bureaucratic_requirement_within_',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 15,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_request_status',
+    'label' => 'Submission Status',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => 8,
+    ),
+  );
+
+  // Exported field_instance: 'node-bureaucratic_requirement_within_-field_responsible_actor'
+  $field_instances['node-bureaucratic_requirement_within_-field_responsible_actor'] = array(
+    'bundle' => 'bureaucratic_requirement_within_',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 16,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_responsible_actor',
+    'label' => 'If denied/delayed, by whom',
+    'required' => 0,
+    'settings' => array(
+      'behaviors' => array(
+        'taxonomy-index' => array(
+          'status' => TRUE,
+        ),
+      ),
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => 9,
     ),
   );
 
@@ -765,63 +845,7 @@ function acc_restrictions_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 9,
-    ),
-  );
-
-  // Exported field_instance: 'node-bureaucratic_requirement_within_-field_status_of_request'
-  $field_instances['node-bureaucratic_requirement_within_-field_status_of_request'] = array(
-    'bundle' => 'bureaucratic_requirement_within_',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'field_collection',
-        'settings' => array(
-          'add' => 'Add',
-          'delete' => 'Delete',
-          'description' => TRUE,
-          'edit' => 'Edit',
-          'view_mode' => 'full',
-        ),
-        'type' => 'field_collection_view',
-        'weight' => 4,
-      ),
-      'entityreference_view_widget' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'ical' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_status_of_request',
-    'label' => 'Status of Request',
-    'required' => 1,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 0,
-      'module' => 'field_collection',
-      'settings' => array(),
-      'type' => 'field_collection_embed',
-      'weight' => 7,
+      'weight' => 11,
     ),
   );
 
@@ -936,11 +960,11 @@ function acc_restrictions_field_default_field_instances() {
   t('Geographical Location (Origin)');
   t('How many days did it take to get an answer (positive/negative)?');
   t('If denied / delayed by whom');
+  t('If denied/delayed, by whom');
   t('Impact');
   t('Mark on map');
   t('Purpose of the administrative request');
   t('Sector(s) affected');
-  t('Status of Request');
   t('Submission Status');
   t('Title');
   t('Value');
