@@ -121,84 +121,6 @@ function acc_restrictions_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'field_collection_item-field_status_of_request-field_if_denied_delayed_by_whom'
-  $field_instances['field_collection_item-field_status_of_request-field_if_denied_delayed_by_whom'] = array(
-    'bundle' => 'field_status_of_request',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'entityreference',
-        'settings' => array(
-          'link' => FALSE,
-        ),
-        'type' => 'entityreference_label',
-        'weight' => 1,
-      ),
-    ),
-    'entity_type' => 'field_collection_item',
-    'field_name' => 'field_if_denied_delayed_by_whom',
-    'label' => 'If denied / delayed by whom',
-    'required' => 0,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(),
-      'type' => 'options_select',
-      'weight' => 2,
-    ),
-  );
-
-  // Exported field_instance: 'field_collection_item-field_status_of_request-field_request_status'
-  $field_instances['field_collection_item-field_status_of_request-field_request_status'] = array(
-    'bundle' => 'field_status_of_request',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'list',
-        'settings' => array(),
-        'type' => 'list_default',
-        'weight' => 0,
-      ),
-      'entityreference_view_widget' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'ical' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'field_collection_item',
-    'field_name' => 'field_request_status',
-    'label' => 'Submission Status',
-    'required' => 0,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(),
-      'type' => 'options_select',
-      'weight' => 1,
-    ),
-  );
-
   // Exported field_instance: 'node-bureaucratic_requirement_within_-body'
   $field_instances['node-bureaucratic_requirement_within_-body'] = array(
     'bundle' => 'bureaucratic_requirement_within_',
@@ -959,7 +881,6 @@ function acc_restrictions_field_default_field_instances() {
   t('Geographical Location (Destination)');
   t('Geographical Location (Origin)');
   t('How many days did it take to get an answer (positive/negative)?');
-  t('If denied / delayed by whom');
   t('If denied/delayed, by whom');
   t('Impact');
   t('Mark on map');
