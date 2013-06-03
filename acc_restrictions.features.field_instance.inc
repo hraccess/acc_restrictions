@@ -201,14 +201,18 @@ function acc_restrictions_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 12,
+      'weight' => 13,
     ),
   );
 
-  // Exported field_instance: 'node-bureaucratic_requirement_within_-field_admin1_2'
-  $field_instances['node-bureaucratic_requirement_within_-field_admin1_2'] = array(
+  // Exported field_instance: 'node-bureaucratic_requirement_within_-field_access_constraint'
+  $field_instances['node-bureaucratic_requirement_within_-field_access_constraint'] = array(
     'bundle' => 'bureaucratic_requirement_within_',
-    'default_value' => NULL,
+    'default_value' => array(
+      0 => array(
+        'tid' => 46,
+      ),
+    ),
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -217,19 +221,7 @@ function acc_restrictions_field_default_field_instances() {
         'module' => 'taxonomy',
         'settings' => array(),
         'type' => 'taxonomy_term_reference_link',
-        'weight' => 1,
-      ),
-      'entityreference_view_widget' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'ical' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 17,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -239,19 +231,19 @@ function acc_restrictions_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_admin1_2',
-    'label' => 'Geographical Location (Destination)',
-    'required' => 1,
+    'field_name' => 'field_access_constraint',
+    'label' => 'Access Constraint',
+    'required' => 0,
     'settings' => array(
       'entity_translation_sync' => FALSE,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'hs_taxonomy',
+      'module' => 'options',
       'settings' => array(),
-      'type' => 'taxonomy_hs',
-      'weight' => 6,
+      'type' => 'options_select',
+      'weight' => 3,
     ),
   );
 
@@ -309,7 +301,45 @@ function acc_restrictions_field_default_field_instances() {
       'module' => 'field_collection',
       'settings' => array(),
       'type' => 'field_collection_embed',
-      'weight' => 13,
+      'weight' => 14,
+    ),
+  );
+
+  // Exported field_instance: 'node-bureaucratic_requirement_within_-field_clusters'
+  $field_instances['node-bureaucratic_requirement_within_-field_clusters'] = array(
+    'bundle' => 'bureaucratic_requirement_within_',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 19,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_clusters',
+    'label' => 'Sector(s) affected',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_buttons',
+      'weight' => 12,
     ),
   );
 
@@ -381,48 +411,6 @@ function acc_restrictions_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-bureaucratic_requirement_within_-field_field_access_constraint_ac'
-  $field_instances['node-bureaucratic_requirement_within_-field_field_access_constraint_ac'] = array(
-    'bundle' => 'bureaucratic_requirement_within_',
-    'default_value' => array(
-      0 => array(
-        'tid' => 94,
-      ),
-    ),
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'taxonomy',
-        'settings' => array(),
-        'type' => 'taxonomy_term_reference_link',
-        'weight' => 14,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_field_access_constraint_ac',
-    'label' => 'Access Constraints',
-    'required' => 0,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(),
-      'type' => 'options_select',
-      'weight' => 2,
-    ),
-  );
-
   // Exported field_instance: 'node-bureaucratic_requirement_within_-field_geographical_location_dest'
   $field_instances['node-bureaucratic_requirement_within_-field_geographical_location_dest'] = array(
     'bundle' => 'bureaucratic_requirement_within_',
@@ -469,7 +457,7 @@ function acc_restrictions_field_default_field_instances() {
       'module' => 'hs_taxonomy',
       'settings' => array(),
       'type' => 'taxonomy_hs',
-      'weight' => 5,
+      'weight' => 6,
     ),
   );
 
@@ -516,7 +504,7 @@ function acc_restrictions_field_default_field_instances() {
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 10,
+      'weight' => 11,
     ),
   );
 
@@ -561,7 +549,45 @@ function acc_restrictions_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 3,
+      'weight' => 4,
+    ),
+  );
+
+  // Exported field_instance: 'node-bureaucratic_requirement_within_-field_locations'
+  $field_instances['node-bureaucratic_requirement_within_-field_locations'] = array(
+    'bundle' => 'bureaucratic_requirement_within_',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 18,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_locations',
+    'label' => 'Geographical Location (Destination)',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'hs_taxonomy',
+      'settings' => array(),
+      'type' => 'taxonomy_hs',
+      'weight' => 8,
     ),
   );
 
@@ -634,7 +660,7 @@ function acc_restrictions_field_default_field_instances() {
         ),
       ),
       'type' => 'geocoder',
-      'weight' => 15,
+      'weight' => 16,
     ),
   );
 
@@ -672,7 +698,7 @@ function acc_restrictions_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 8,
+      'weight' => 9,
     ),
   );
 
@@ -717,57 +743,7 @@ function acc_restrictions_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 9,
-    ),
-  );
-
-  // Exported field_instance: 'node-bureaucratic_requirement_within_-field_sectors'
-  $field_instances['node-bureaucratic_requirement_within_-field_sectors'] = array(
-    'bundle' => 'bureaucratic_requirement_within_',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'taxonomy',
-        'settings' => array(),
-        'type' => 'taxonomy_term_reference_link',
-        'weight' => 2,
-      ),
-      'entityreference_view_widget' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'ical' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_sectors',
-    'label' => 'Sector(s) affected',
-    'required' => 1,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(),
-      'type' => 'options_buttons',
-      'weight' => 11,
+      'weight' => 10,
     ),
   );
 
@@ -816,7 +792,7 @@ function acc_restrictions_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete',
-      'weight' => 4,
+      'weight' => 5,
     ),
   );
 
@@ -874,7 +850,7 @@ function acc_restrictions_field_default_field_instances() {
   // Translatables
   // Included for use with string extractors like potx.
   t('A field replacing node title.');
-  t('Access Constraints');
+  t('Access Constraint');
   t('Administrative request submited by');
   t('Date');
   t('Description/Remarks');

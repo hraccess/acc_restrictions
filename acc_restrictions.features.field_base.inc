@@ -10,44 +10,6 @@
 function acc_restrictions_field_default_field_bases() {
   $field_bases = array();
 
-  // Exported field_base: 'field_admin1_2'
-  $field_bases['field_admin1_2'] = array(
-    'active' => 1,
-    'cardinality' => -1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_admin1_2',
-    'field_permissions' => array(
-      'type' => 0,
-    ),
-    'foreign keys' => array(
-      'tid' => array(
-        'columns' => array(
-          'tid' => 'tid',
-        ),
-        'table' => 'taxonomy_term_data',
-      ),
-    ),
-    'indexes' => array(
-      'tid' => array(
-        0 => 'tid',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'taxonomy',
-    'settings' => array(
-      'allowed_values' => array(
-        0 => array(
-          'vocabulary' => 'locations',
-          'parent' => 0,
-        ),
-      ),
-      'entity_translation_sync' => FALSE,
-    ),
-    'translatable' => 0,
-    'type' => 'taxonomy_term_reference',
-  );
-
   // Exported field_base: 'field_br_req_within_impact'
   $field_bases['field_br_req_within_impact'] = array(
     'active' => 1,
@@ -99,7 +61,7 @@ function acc_restrictions_field_default_field_bases() {
       ),
       'repeat' => 0,
       'timezone_db' => '',
-      'todate' => '',
+      'todate' => 'optional',
       'tz_handling' => 'none',
     ),
     'translatable' => 0,
@@ -299,44 +261,6 @@ function acc_restrictions_field_default_field_bases() {
     ),
     'translatable' => 0,
     'type' => 'list_text',
-  );
-
-  // Exported field_base: 'field_sectors'
-  $field_bases['field_sectors'] = array(
-    'active' => 1,
-    'cardinality' => -1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_sectors',
-    'field_permissions' => array(
-      'type' => 0,
-    ),
-    'foreign keys' => array(
-      'tid' => array(
-        'columns' => array(
-          'tid' => 'tid',
-        ),
-        'table' => 'taxonomy_term_data',
-      ),
-    ),
-    'indexes' => array(
-      'tid' => array(
-        0 => 'tid',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'taxonomy',
-    'settings' => array(
-      'allowed_values' => array(
-        0 => array(
-          'vocabulary' => 'clusters',
-          'parent' => 0,
-        ),
-      ),
-      'entity_translation_sync' => FALSE,
-    ),
-    'translatable' => 0,
-    'type' => 'taxonomy_term_reference',
   );
 
   // Exported field_base: 'field_targetted_actor'

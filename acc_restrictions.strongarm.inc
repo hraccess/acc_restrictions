@@ -21,7 +21,7 @@ function acc_restrictions_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'auto_entitylabel_pattern_node_bureaucratic_requirement_within_';
-  $strongarm->value = '[node:field-date] [node:field_purpose_of_the_administrat] [node:field-organization-affected]';
+  $strongarm->value = '[node:field_date] [node:field_incident_type_restriction] [node:field_targetted_actor]';
   $export['auto_entitylabel_pattern_node_bureaucratic_requirement_within_'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -108,7 +108,7 @@ function acc_restrictions_strongarm() {
           'weight' => '-5',
         ),
         'path' => array(
-          'weight' => '14',
+          'weight' => '15',
         ),
       ),
       'display' => array(),
