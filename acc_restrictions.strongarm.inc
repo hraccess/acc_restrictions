@@ -108,7 +108,7 @@ function acc_restrictions_strongarm() {
           'weight' => '-5',
         ),
         'path' => array(
-          'weight' => '15',
+          'weight' => '14',
         ),
       ),
       'display' => array(),
