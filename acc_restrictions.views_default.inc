@@ -15,7 +15,7 @@ function acc_restrictions_views_default_views() {
   $view->description = '';
   $view->tag = 'Access';
   $view->base_table = 'node';
-  $view->human_name = 'Access Restrictions';
+  $view->human_name = '';
   $view->core = 7;
   $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
@@ -56,6 +56,10 @@ function acc_restrictions_views_default_views() {
       'empty_column' => 0,
     ),
   );
+  /* Relationship: Entity Reference: Referenced Entity */
+  $handler->display->display_options['relationships']['field_targetted_actor_target_id']['id'] = 'field_targetted_actor_target_id';
+  $handler->display->display_options['relationships']['field_targetted_actor_target_id']['table'] = 'field_data_field_targetted_actor';
+  $handler->display->display_options['relationships']['field_targetted_actor_target_id']['field'] = 'field_targetted_actor_target_id';
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -102,7 +106,7 @@ function acc_restrictions_views_default_views() {
   $handler->display->display_options['arguments']['field_locations_tid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['field_locations_tid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['field_locations_tid']['summary_options']['items_per_page'] = '25';
-  /* Contextual filter: Content: Clusters (field_clusters) */
+  /* Contextual filter: Content: Sector(s)/Cluster(s) affected (field_clusters) */
   $handler->display->display_options['arguments']['field_clusters_tid']['id'] = 'field_clusters_tid';
   $handler->display->display_options['arguments']['field_clusters_tid']['table'] = 'field_data_field_clusters';
   $handler->display->display_options['arguments']['field_clusters_tid']['field'] = 'field_clusters_tid';
@@ -111,6 +115,15 @@ function acc_restrictions_views_default_views() {
   $handler->display->display_options['arguments']['field_clusters_tid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['field_clusters_tid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['field_clusters_tid']['summary_options']['items_per_page'] = '25';
+  /* Contextual filter: Content: Purpose of the administrative request (field_incident_type_restriction) */
+  $handler->display->display_options['arguments']['field_incident_type_restriction_target_id']['id'] = 'field_incident_type_restriction_target_id';
+  $handler->display->display_options['arguments']['field_incident_type_restriction_target_id']['table'] = 'field_data_field_incident_type_restriction';
+  $handler->display->display_options['arguments']['field_incident_type_restriction_target_id']['field'] = 'field_incident_type_restriction_target_id';
+  $handler->display->display_options['arguments']['field_incident_type_restriction_target_id']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['field_incident_type_restriction_target_id']['default_argument_type'] = 'global_filter_field';
+  $handler->display->display_options['arguments']['field_incident_type_restriction_target_id']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['field_incident_type_restriction_target_id']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['field_incident_type_restriction_target_id']['summary_options']['items_per_page'] = '25';
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
@@ -139,6 +152,7 @@ function acc_restrictions_views_default_views() {
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
@@ -699,7 +713,7 @@ function acc_restrictions_views_default_views() {
   $handler->display->display_options['style_plugin'] = 'visualization';
   $handler->display->display_options['style_options']['type'] = 'pie';
   $handler->display->display_options['style_options']['fields'] = array(
-    'field_responsible_actor' => array(
+    'field_organization_type' => array(
       'enabled' => 0,
       'sort' => '0',
     ),
@@ -712,22 +726,26 @@ function acc_restrictions_views_default_views() {
     'title' => 'Number of incidents',
   );
   $handler->display->display_options['style_options']['xAxis'] = array(
-    'labelField' => 'field_responsible_actor',
+    'labelField' => 'field_organization_type',
     'invert' => 0,
   );
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: Entity Reference: Referenced Entity */
+  $handler->display->display_options['relationships']['field_responsible_actor_target_id']['id'] = 'field_responsible_actor_target_id';
+  $handler->display->display_options['relationships']['field_responsible_actor_target_id']['table'] = 'field_data_field_responsible_actor';
+  $handler->display->display_options['relationships']['field_responsible_actor_target_id']['field'] = 'field_responsible_actor_target_id';
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Content: If denied/delayed, by whom */
-  $handler->display->display_options['fields']['field_responsible_actor']['id'] = 'field_responsible_actor';
-  $handler->display->display_options['fields']['field_responsible_actor']['table'] = 'field_data_field_responsible_actor';
-  $handler->display->display_options['fields']['field_responsible_actor']['field'] = 'field_responsible_actor';
-  $handler->display->display_options['fields']['field_responsible_actor']['settings'] = array(
-    'link' => 0,
-  );
-  /* Field: Content: If denied/delayed, by whom */
+  /* Field: Taxonomy term: Type */
+  $handler->display->display_options['fields']['field_organization_type']['id'] = 'field_organization_type';
+  $handler->display->display_options['fields']['field_organization_type']['table'] = 'field_data_field_organization_type';
+  $handler->display->display_options['fields']['field_organization_type']['field'] = 'field_organization_type';
+  $handler->display->display_options['fields']['field_organization_type']['relationship'] = 'field_responsible_actor_target_id';
+  $handler->display->display_options['fields']['field_organization_type']['label'] = 'Org Type';
+  /* Field: Content: Issuing actor/agency/office */
   $handler->display->display_options['fields']['field_responsible_actor_1']['id'] = 'field_responsible_actor_1';
   $handler->display->display_options['fields']['field_responsible_actor_1']['table'] = 'field_data_field_responsible_actor';
   $handler->display->display_options['fields']['field_responsible_actor_1']['field'] = 'field_responsible_actor';
@@ -792,14 +810,14 @@ function acc_restrictions_views_default_views() {
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Content: If denied/delayed, by whom */
+  /* Field: Content: Issuing actor/agency/office */
   $handler->display->display_options['fields']['field_responsible_actor']['id'] = 'field_responsible_actor';
   $handler->display->display_options['fields']['field_responsible_actor']['table'] = 'field_data_field_responsible_actor';
   $handler->display->display_options['fields']['field_responsible_actor']['field'] = 'field_responsible_actor';
   $handler->display->display_options['fields']['field_responsible_actor']['settings'] = array(
     'link' => 0,
   );
-  /* Field: Content: If denied/delayed, by whom */
+  /* Field: Content: Issuing actor/agency/office */
   $handler->display->display_options['fields']['field_responsible_actor_1']['id'] = 'field_responsible_actor_1';
   $handler->display->display_options['fields']['field_responsible_actor_1']['table'] = 'field_data_field_responsible_actor';
   $handler->display->display_options['fields']['field_responsible_actor_1']['field'] = 'field_responsible_actor';
@@ -838,21 +856,32 @@ function acc_restrictions_views_default_views() {
   $handler->display->display_options['style_options']['provide_file'] = 1;
   $handler->display->display_options['style_options']['filename'] = '%view_%display.xls';
   $handler->display->display_options['style_options']['parent_sort'] = 0;
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: Entity Reference: Referenced Entity */
+  $handler->display->display_options['relationships']['field_responsible_actor_target_id']['id'] = 'field_responsible_actor_target_id';
+  $handler->display->display_options['relationships']['field_responsible_actor_target_id']['table'] = 'field_data_field_responsible_actor';
+  $handler->display->display_options['relationships']['field_responsible_actor_target_id']['field'] = 'field_responsible_actor_target_id';
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Content: If denied/delayed, by whom */
+  /* Field: Content: Issuing actor/agency/office */
   $handler->display->display_options['fields']['field_responsible_actor']['id'] = 'field_responsible_actor';
   $handler->display->display_options['fields']['field_responsible_actor']['table'] = 'field_data_field_responsible_actor';
   $handler->display->display_options['fields']['field_responsible_actor']['field'] = 'field_responsible_actor';
   $handler->display->display_options['fields']['field_responsible_actor']['settings'] = array(
     'link' => 0,
   );
-  /* Field: Content: If denied/delayed, by whom */
+  /* Field: Content: Issuing actor/agency/office */
   $handler->display->display_options['fields']['field_responsible_actor_1']['id'] = 'field_responsible_actor_1';
   $handler->display->display_options['fields']['field_responsible_actor_1']['table'] = 'field_data_field_responsible_actor';
   $handler->display->display_options['fields']['field_responsible_actor_1']['field'] = 'field_responsible_actor';
   $handler->display->display_options['fields']['field_responsible_actor_1']['group_type'] = 'count';
   $handler->display->display_options['fields']['field_responsible_actor_1']['label'] = 'Number of Incidents';
   $handler->display->display_options['fields']['field_responsible_actor_1']['separator'] = ', ';
+  /* Field: Taxonomy term: Type */
+  $handler->display->display_options['fields']['field_organization_type']['id'] = 'field_organization_type';
+  $handler->display->display_options['fields']['field_organization_type']['table'] = 'field_data_field_organization_type';
+  $handler->display->display_options['fields']['field_organization_type']['field'] = 'field_organization_type';
+  $handler->display->display_options['fields']['field_organization_type']['relationship'] = 'field_responsible_actor_target_id';
+  $handler->display->display_options['fields']['field_organization_type']['label'] = 'Org Type';
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
@@ -919,8 +948,9 @@ function acc_restrictions_views_default_views() {
   $handler->display->display_options['style_plugin'] = 'visualization';
   $handler->display->display_options['style_options']['type'] = 'bar';
   $handler->display->display_options['style_options']['fields'] = array(
-    'field_targetted_actor' => array(
+    'field_organization_type' => array(
       'enabled' => 0,
+      'sort' => '0',
     ),
     'field_targetted_actor_1' => array(
       'enabled' => 1,
@@ -931,24 +961,26 @@ function acc_restrictions_views_default_views() {
     'title' => 'Number of incidents',
   );
   $handler->display->display_options['style_options']['xAxis'] = array(
-    'labelField' => 'field_targetted_actor',
+    'labelField' => 'field_organization_type',
     'invert' => 0,
   );
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: Entity Reference: Referenced Entity */
+  $handler->display->display_options['relationships']['field_targetted_actor_target_id']['id'] = 'field_targetted_actor_target_id';
+  $handler->display->display_options['relationships']['field_targetted_actor_target_id']['table'] = 'field_data_field_targetted_actor';
+  $handler->display->display_options['relationships']['field_targetted_actor_target_id']['field'] = 'field_targetted_actor_target_id';
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Content: Administrative request submited by */
-  $handler->display->display_options['fields']['field_targetted_actor']['id'] = 'field_targetted_actor';
-  $handler->display->display_options['fields']['field_targetted_actor']['table'] = 'field_data_field_targetted_actor';
-  $handler->display->display_options['fields']['field_targetted_actor']['field'] = 'field_targetted_actor';
-  $handler->display->display_options['fields']['field_targetted_actor']['label'] = 'Affected Organizations';
-  $handler->display->display_options['fields']['field_targetted_actor']['settings'] = array(
-    'link' => 0,
-  );
-  $handler->display->display_options['fields']['field_targetted_actor']['delta_offset'] = '0';
-  /* Field: Content: Administrative request submited by */
+  /* Field: Taxonomy term: Type */
+  $handler->display->display_options['fields']['field_organization_type']['id'] = 'field_organization_type';
+  $handler->display->display_options['fields']['field_organization_type']['table'] = 'field_data_field_organization_type';
+  $handler->display->display_options['fields']['field_organization_type']['field'] = 'field_organization_type';
+  $handler->display->display_options['fields']['field_organization_type']['relationship'] = 'field_targetted_actor_target_id';
+  $handler->display->display_options['fields']['field_organization_type']['label'] = 'Org Type';
+  /* Field: Content: Affected actors(s)/organization(s) */
   $handler->display->display_options['fields']['field_targetted_actor_1']['id'] = 'field_targetted_actor_1';
   $handler->display->display_options['fields']['field_targetted_actor_1']['table'] = 'field_data_field_targetted_actor';
   $handler->display->display_options['fields']['field_targetted_actor_1']['field'] = 'field_targetted_actor';
@@ -1010,8 +1042,13 @@ function acc_restrictions_views_default_views() {
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: Entity Reference: Referenced Entity */
+  $handler->display->display_options['relationships']['field_targetted_actor_target_id']['id'] = 'field_targetted_actor_target_id';
+  $handler->display->display_options['relationships']['field_targetted_actor_target_id']['table'] = 'field_data_field_targetted_actor';
+  $handler->display->display_options['relationships']['field_targetted_actor_target_id']['field'] = 'field_targetted_actor_target_id';
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Content: Administrative request submited by */
+  /* Field: Content: Affected actors(s)/organization(s) */
   $handler->display->display_options['fields']['field_targetted_actor']['id'] = 'field_targetted_actor';
   $handler->display->display_options['fields']['field_targetted_actor']['table'] = 'field_data_field_targetted_actor';
   $handler->display->display_options['fields']['field_targetted_actor']['field'] = 'field_targetted_actor';
@@ -1020,15 +1057,21 @@ function acc_restrictions_views_default_views() {
     'link' => 0,
   );
   $handler->display->display_options['fields']['field_targetted_actor']['delta_offset'] = '0';
-  /* Field: Content: Administrative request submited by */
+  /* Field: Content: Affected actors(s)/organization(s) */
   $handler->display->display_options['fields']['field_targetted_actor_1']['id'] = 'field_targetted_actor_1';
   $handler->display->display_options['fields']['field_targetted_actor_1']['table'] = 'field_data_field_targetted_actor';
   $handler->display->display_options['fields']['field_targetted_actor_1']['field'] = 'field_targetted_actor';
   $handler->display->display_options['fields']['field_targetted_actor_1']['group_type'] = 'count';
   $handler->display->display_options['fields']['field_targetted_actor_1']['label'] = 'Number of Incidents';
   $handler->display->display_options['fields']['field_targetted_actor_1']['separator'] = ', ';
+  /* Field: Taxonomy term: Type */
+  $handler->display->display_options['fields']['field_organization_type']['id'] = 'field_organization_type';
+  $handler->display->display_options['fields']['field_organization_type']['table'] = 'field_data_field_organization_type';
+  $handler->display->display_options['fields']['field_organization_type']['field'] = 'field_organization_type';
+  $handler->display->display_options['fields']['field_organization_type']['relationship'] = 'field_targetted_actor_target_id';
+  $handler->display->display_options['fields']['field_organization_type']['label'] = 'Org Type';
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Content: Administrative request submited by (field_targetted_actor) */
+  /* Sort criterion: Content: Affected actors(s)/organization(s) (field_targetted_actor) */
   $handler->display->display_options['sorts']['field_targetted_actor_target_id']['id'] = 'field_targetted_actor_target_id';
   $handler->display->display_options['sorts']['field_targetted_actor_target_id']['table'] = 'field_data_field_targetted_actor';
   $handler->display->display_options['sorts']['field_targetted_actor_target_id']['field'] = 'field_targetted_actor_target_id';
@@ -1066,7 +1109,7 @@ function acc_restrictions_views_default_views() {
   $handler->display->display_options['style_options']['filename'] = '%view_%display.xls';
   $handler->display->display_options['style_options']['parent_sort'] = 0;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Content: Administrative request submited by */
+  /* Field: Content: Affected actors(s)/organization(s) */
   $handler->display->display_options['fields']['field_targetted_actor']['id'] = 'field_targetted_actor';
   $handler->display->display_options['fields']['field_targetted_actor']['table'] = 'field_data_field_targetted_actor';
   $handler->display->display_options['fields']['field_targetted_actor']['field'] = 'field_targetted_actor';
@@ -1075,15 +1118,21 @@ function acc_restrictions_views_default_views() {
     'link' => 0,
   );
   $handler->display->display_options['fields']['field_targetted_actor']['delta_offset'] = '0';
-  /* Field: Content: Administrative request submited by */
+  /* Field: Content: Affected actors(s)/organization(s) */
   $handler->display->display_options['fields']['field_targetted_actor_1']['id'] = 'field_targetted_actor_1';
   $handler->display->display_options['fields']['field_targetted_actor_1']['table'] = 'field_data_field_targetted_actor';
   $handler->display->display_options['fields']['field_targetted_actor_1']['field'] = 'field_targetted_actor';
   $handler->display->display_options['fields']['field_targetted_actor_1']['group_type'] = 'count';
   $handler->display->display_options['fields']['field_targetted_actor_1']['label'] = 'Number of Incidents';
   $handler->display->display_options['fields']['field_targetted_actor_1']['separator'] = ', ';
+  /* Field: Taxonomy term: Type */
+  $handler->display->display_options['fields']['field_organization_type']['id'] = 'field_organization_type';
+  $handler->display->display_options['fields']['field_organization_type']['table'] = 'field_data_field_organization_type';
+  $handler->display->display_options['fields']['field_organization_type']['field'] = 'field_organization_type';
+  $handler->display->display_options['fields']['field_organization_type']['relationship'] = 'field_targetted_actor_target_id';
+  $handler->display->display_options['fields']['field_organization_type']['label'] = 'Organization Type';
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Content: Administrative request submited by (field_targetted_actor) */
+  /* Sort criterion: Content: Affected actors(s)/organization(s) (field_targetted_actor) */
   $handler->display->display_options['sorts']['field_targetted_actor_target_id']['id'] = 'field_targetted_actor_target_id';
   $handler->display->display_options['sorts']['field_targetted_actor_target_id']['table'] = 'field_data_field_targetted_actor';
   $handler->display->display_options['sorts']['field_targetted_actor_target_id']['field'] = 'field_targetted_actor_target_id';
@@ -1176,13 +1225,13 @@ function acc_restrictions_views_default_views() {
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Content: Clusters */
+  /* Field: Content: Sector(s)/Cluster(s) affected */
   $handler->display->display_options['fields']['field_clusters']['id'] = 'field_clusters';
   $handler->display->display_options['fields']['field_clusters']['table'] = 'field_data_field_clusters';
   $handler->display->display_options['fields']['field_clusters']['field'] = 'field_clusters';
   $handler->display->display_options['fields']['field_clusters']['label'] = 'Sectors/Clusters Affected';
   $handler->display->display_options['fields']['field_clusters']['delta_offset'] = '0';
-  /* Field: Content: Clusters */
+  /* Field: Content: Sector(s)/Cluster(s) affected */
   $handler->display->display_options['fields']['field_clusters_1']['id'] = 'field_clusters_1';
   $handler->display->display_options['fields']['field_clusters_1']['table'] = 'field_data_field_clusters';
   $handler->display->display_options['fields']['field_clusters_1']['field'] = 'field_clusters';
@@ -1245,13 +1294,13 @@ function acc_restrictions_views_default_views() {
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Content: Clusters */
+  /* Field: Content: Sector(s)/Cluster(s) affected */
   $handler->display->display_options['fields']['field_clusters']['id'] = 'field_clusters';
   $handler->display->display_options['fields']['field_clusters']['table'] = 'field_data_field_clusters';
   $handler->display->display_options['fields']['field_clusters']['field'] = 'field_clusters';
   $handler->display->display_options['fields']['field_clusters']['label'] = 'Sectors/Clusters Affected';
   $handler->display->display_options['fields']['field_clusters']['delta_offset'] = '0';
-  /* Field: Content: Clusters */
+  /* Field: Content: Sector(s)/Cluster(s) affected */
   $handler->display->display_options['fields']['field_clusters_1']['id'] = 'field_clusters_1';
   $handler->display->display_options['fields']['field_clusters_1']['table'] = 'field_data_field_clusters';
   $handler->display->display_options['fields']['field_clusters_1']['field'] = 'field_clusters';
@@ -1291,13 +1340,13 @@ function acc_restrictions_views_default_views() {
   $handler->display->display_options['style_options']['filename'] = '%view_%display.xls';
   $handler->display->display_options['style_options']['parent_sort'] = 0;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Content: Clusters */
+  /* Field: Content: Sector(s)/Cluster(s) affected */
   $handler->display->display_options['fields']['field_clusters']['id'] = 'field_clusters';
   $handler->display->display_options['fields']['field_clusters']['table'] = 'field_data_field_clusters';
   $handler->display->display_options['fields']['field_clusters']['field'] = 'field_clusters';
   $handler->display->display_options['fields']['field_clusters']['label'] = 'Sectors/Cluster Affected';
   $handler->display->display_options['fields']['field_clusters']['delta_offset'] = '0';
-  /* Field: Content: Clusters */
+  /* Field: Content: Sector(s)/Cluster(s) affected */
   $handler->display->display_options['fields']['field_clusters_1']['id'] = 'field_clusters_1';
   $handler->display->display_options['fields']['field_clusters_1']['table'] = 'field_data_field_clusters';
   $handler->display->display_options['fields']['field_clusters_1']['field'] = 'field_clusters';
@@ -1337,6 +1386,7 @@ function acc_restrictions_views_default_views() {
     t('‹ previous'),
     t('next ›'),
     t('last »'),
+    t('Taxonomy term entity referenced from field_targetted_actor'),
     t('Title'),
     t('Description'),
     t('Date'),
@@ -1358,12 +1408,15 @@ function acc_restrictions_views_default_views() {
     t('Broken handler field_data_field_admin1_2.field_admin1_2'),
     t('Chart Restrictons by resposible actor'),
     t('Restrictons by resposible actor'),
-    t('If denied/delayed, by whom'),
+    t('Taxonomy term entity referenced from field_responsible_actor'),
+    t('Org Type'),
+    t('Issuing actor/agency/office'),
     t('XLS Restrictons by resposible actor'),
     t('Chart Restrictons by affected organization'),
     t('Restrictons by affected organization'),
     t('Affected Organizations'),
     t('XLS Restrictons by affected organization'),
+    t('Organization Type'),
     t('Chart Restrictons by sectors'),
     t('Restrictons by sectors affected'),
     t('Sectors/Clusters Affected'),
