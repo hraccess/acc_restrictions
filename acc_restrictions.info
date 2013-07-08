@@ -53,6 +53,7 @@ features[variable][] = comment_form_location_bureaucratic_requirement_within_
 features[variable][] = comment_preview_bureaucratic_requirement_within_
 features[variable][] = comment_subject_field_bureaucratic_requirement_within_
 features[variable][] = field_bundle_settings_node__bureaucratic_requirement_within_
+features[variable][] = global_filters
 features[variable][] = language_content_type_bureaucratic_requirement_within_
 features[variable][] = menu_options_bureaucratic_requirement_within_
 features[variable][] = menu_parent_bureaucratic_requirement_within_
