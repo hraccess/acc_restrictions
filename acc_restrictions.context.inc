@@ -19,7 +19,7 @@ function acc_restrictions_context_default_contexts() {
   $context->conditions = array(
     'path' => array(
       'values' => array(
-        'dashboard/factsheet-restriction-movement' => 'dashboard/factsheet-restriction-movement',
+        'access/dashboard/factsheet-restriction-movement' => 'access/dashboard/factsheet-restriction-movement',
       ),
     ),
   );
@@ -146,15 +146,15 @@ function acc_restrictions_context_default_contexts() {
           'region' => 'content',
           'weight' => '9',
         ),
-        'views-8c5aa43d1dccf1039d0183407afb771a' => array(
-          'module' => 'views',
-          'delta' => '8c5aa43d1dccf1039d0183407afb771a',
-          'region' => 'content',
-          'weight' => '10',
-        ),
         'views-7a95743de66d055f3fb539957623221b' => array(
           'module' => 'views',
           'delta' => '7a95743de66d055f3fb539957623221b',
+          'region' => 'content',
+          'weight' => '10',
+        ),
+        'views-8c5aa43d1dccf1039d0183407afb771a' => array(
+          'module' => 'views',
+          'delta' => '8c5aa43d1dccf1039d0183407afb771a',
           'region' => 'content',
           'weight' => '10',
         ),

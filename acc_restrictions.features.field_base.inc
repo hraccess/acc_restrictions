@@ -102,6 +102,7 @@ function acc_restrictions_field_default_field_bases() {
         'second' => 0,
         'year' => 'year',
       ),
+      'profile2_private' => FALSE,
       'repeat' => 0,
       'timezone_db' => '',
       'todate' => 'optional',
