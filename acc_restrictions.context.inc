@@ -13,7 +13,7 @@ function acc_restrictions_context_default_contexts() {
   $context = new stdClass();
   $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
   $context->api_version = 3;
-  $context->name = 'access_restrictions';
+  $context->name = 'acc_access_restrictions';
   $context->description = '';
   $context->tag = '';
   $context->conditions = array(
@@ -162,7 +162,7 @@ function acc_restrictions_context_default_contexts() {
     ),
   );
   $context->condition_mode = 0;
-  $export['access_restrictions'] = $context;
+  $export['acc_access_restrictions'] = $context;
 
   return $export;
 }
