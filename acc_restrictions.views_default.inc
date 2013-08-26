@@ -11,7 +11,7 @@ function acc_restrictions_views_default_views() {
   $export = array();
 
   $view = new view();
-  $view->name = 'acc_restriction_on_movement_within_the_country';
+  $view->name = 'acc_restrictions';
   $view->description = '';
   $view->tag = 'Access';
   $view->base_table = 'node';
