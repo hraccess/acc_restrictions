@@ -60,6 +60,7 @@ features[variable][] = menu_parent_bureaucratic_requirement_within_
 features[variable][] = node_options_bureaucratic_requirement_within_
 features[variable][] = node_preview_bureaucratic_requirement_within_
 features[variable][] = node_submitted_bureaucratic_requirement_within_
+features[views_view][] = acc_restriction_on_movement_within_the_country
 features_exclude[dependencies][ctools] = ctools
 features_exclude[dependencies][date] = date
 features_exclude[dependencies][entityreference] = entityreference
