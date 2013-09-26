@@ -470,6 +470,7 @@ function acc_restrictions_field_default_field_instances() {
       'active' => 1,
       'module' => 'date',
       'settings' => array(
+        'apply_chosen' => 0,
         'display_all_day' => 0,
         'increment' => 15,
         'input_format' => 'j M Y - g:i:sa',

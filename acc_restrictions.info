@@ -2,7 +2,6 @@ name = Access Restriction on movemnet within the country
 description = Provide the Content Type and Views for Restriction on movement with in the country
 core = 7.x
 package = Humanitarian Access
-php = 5.2.4
 dependencies[] = acc_incidents
 dependencies[] = ctools
 dependencies[] = date

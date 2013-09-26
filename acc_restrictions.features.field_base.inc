@@ -168,49 +168,6 @@ function acc_restrictions_field_default_field_bases() {
     'type' => 'number_integer',
   );
 
-  /*Exported field_base: 'field_if_denied_delayed_by_whom'
-  $field_bases['field_if_denied_delayed_by_whom'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_if_denied_delayed_by_whom',
-    'foreign keys' => array(
-      'taxonomy_term_data' => array(
-        'columns' => array(
-          'target_id' => 'tid',
-        ),
-        'table' => 'taxonomy_term_data',
-      ),
-    ),
-    'indexes' => array(
-      'target_id' => array(
-        0 => 'target_id',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'entityreference',
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'handler' => 'views',
-      'handler_settings' => array(
-        'behaviors' => array(
-          'views-select-list' => array(
-            'status' => 0,
-          ),
-        ),
-        'view' => array(
-          'args' => array(),
-          'display_name' => 'entityreference_2',
-          'view_name' => 'acc_organizations_affected',
-        ),
-      ),
-      'target_type' => 'taxonomy_term',
-    ),
-    'translatable' => 0,
-    'type' => 'entityreference',
-  );
-*/
   // Exported field_base: 'field_incident_type_restriction'
   $field_bases['field_incident_type_restriction'] = array(
     'active' => 1,
@@ -265,11 +222,45 @@ function acc_restrictions_field_default_field_bases() {
       'type' => 0,
     ),
     'foreign keys' => array(),
-    'indexes' => array(),
+    'indexes' => array(
+      'bbox' => array(
+        0 => 'top',
+        1 => 'bottom',
+        2 => 'left',
+        3 => 'right',
+      ),
+      'bottom' => array(
+        0 => 'bottom',
+      ),
+      'centroid' => array(
+        0 => 'lat',
+        1 => 'lon',
+      ),
+      'geohash' => array(
+        0 => 'geohash',
+      ),
+      'lat' => array(
+        0 => 'lat',
+      ),
+      'left' => array(
+        0 => 'left',
+      ),
+      'lon' => array(
+        0 => 'lon',
+      ),
+      'right' => array(
+        0 => 'right',
+      ),
+      'top' => array(
+        0 => 'top',
+      ),
+    ),
     'locked' => 0,
     'module' => 'geofield',
     'settings' => array(
+      'backend' => 'default',
       'entity_translation_sync' => FALSE,
+      'srid' => 4326,
     ),
     'translatable' => 0,
     'type' => 'geofield',
