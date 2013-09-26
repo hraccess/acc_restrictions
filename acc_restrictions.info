@@ -33,7 +33,6 @@ features[field_base][] = field_br_req_within_impact
 features[field_base][] = field_date
 features[field_base][] = field_geographical_location_dest
 features[field_base][] = field_how_many_days_did_it_take_
-features[field_base][] = field_if_denied_delayed_by_whom
 features[field_base][] = field_incident_type_restriction
 features[field_base][] = field_point_location
 features[field_base][] = field_request_status

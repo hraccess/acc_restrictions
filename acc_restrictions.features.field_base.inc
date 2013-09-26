@@ -168,7 +168,7 @@ function acc_restrictions_field_default_field_bases() {
     'type' => 'number_integer',
   );
 
-  // Exported field_base: 'field_if_denied_delayed_by_whom'
+  /*Exported field_base: 'field_if_denied_delayed_by_whom'
   $field_bases['field_if_denied_delayed_by_whom'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -210,7 +210,7 @@ function acc_restrictions_field_default_field_bases() {
     'translatable' => 0,
     'type' => 'entityreference',
   );
-
+*/
   // Exported field_base: 'field_incident_type_restriction'
   $field_bases['field_incident_type_restriction'] = array(
     'active' => 1,
