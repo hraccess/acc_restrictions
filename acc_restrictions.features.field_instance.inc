@@ -852,7 +852,7 @@ function acc_restrictions_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_targetted_actor',
-    'label' => 'Administrative request submited by',
+    'label' => 'Administrative request submitted by',
     'required' => 1,
     'settings' => array(
       'behaviors' => array(
@@ -931,7 +931,7 @@ function acc_restrictions_field_default_field_instances() {
   // Included for use with string extractors like potx.
   t('A field replacing node title.');
   t('Access Constraint');
-  t('Administrative request submited by');
+  t('Administrative request submitted by');
   t('Below Admin 2 Level (Destination)');
   t('Date');
   t('Description/Remarks');

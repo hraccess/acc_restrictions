@@ -338,6 +338,7 @@ function acc_restrictions_field_default_field_bases() {
           'view_name' => 'acc_organizations_affected',
         ),
       ),
+      'profile2_private' => FALSE,
       'target_type' => 'taxonomy_term',
     ),
     'translatable' => 0,
