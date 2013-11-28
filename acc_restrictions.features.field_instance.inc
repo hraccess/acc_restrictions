@@ -203,18 +203,58 @@ function acc_restrictions_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 12,
+      'weight' => 13,
+    ),
+  );
+
+  // Exported field_instance: 'node-bureaucratic_requirement_within_-field_acc_action_taken'
+  $field_instances['node-bureaucratic_requirement_within_-field_acc_action_taken'] = array(
+    'bundle' => 'bureaucratic_requirement_within_',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'field_collection',
+        'settings' => array(
+          'add' => 'Add',
+          'delete' => 'Delete',
+          'description' => TRUE,
+          'edit' => 'Edit',
+          'view_mode' => 'full',
+        ),
+        'type' => 'field_collection_view',
+        'weight' => 22,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_acc_action_taken',
+    'label' => 'Action Taken Restrictions on movement within country',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'field_collection',
+      'settings' => array(),
+      'type' => 'field_collection_embed',
+      'weight' => 15,
     ),
   );
 
   // Exported field_instance: 'node-bureaucratic_requirement_within_-field_access_constraint'
   $field_instances['node-bureaucratic_requirement_within_-field_access_constraint'] = array(
     'bundle' => 'bureaucratic_requirement_within_',
-    'default_value' => array(
-      0 => array(
-        'tid' => 46,
-      ),
-    ),
+    'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -223,7 +263,7 @@ function acc_restrictions_field_default_field_instances() {
         'module' => 'taxonomy',
         'settings' => array(),
         'type' => 'taxonomy_term_reference_link',
-        'weight' => 17,
+        'weight' => 23,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -247,7 +287,70 @@ function acc_restrictions_field_default_field_instances() {
         'apply_chosen' => 0,
       ),
       'type' => 'options_select',
-      'weight' => 2,
+      'weight' => 1,
+    ),
+  );
+
+  // Exported field_instance: 'node-bureaucratic_requirement_within_-field_attach_file'
+  $field_instances['node-bureaucratic_requirement_within_-field_attach_file'] = array(
+    'bundle' => 'bureaucratic_requirement_within_',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'file',
+        'settings' => array(),
+        'type' => 'file_default',
+        'weight' => 24,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_attach_file',
+    'label' => 'Attach File',
+    'required' => 0,
+    'settings' => array(
+      'description_field' => 0,
+      'entity_translation_sync' => FALSE,
+      'file_directory' => '',
+      'file_extensions' => 'txt',
+      'max_filesize' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'file',
+      'settings' => array(
+        'filefield_sources' => array(
+          'filefield_sources' => array(
+            'attach' => 0,
+            'clipboard' => 0,
+            'reference' => 0,
+            'remote' => 0,
+            'upload' => 'upload',
+          ),
+          'source_attach' => array(
+            'absolute' => 0,
+            'attach_mode' => 'move',
+            'path' => 'file_attach',
+          ),
+          'source_imce' => array(
+            'imce_mode' => 0,
+          ),
+          'source_reference' => array(
+            'autocomplete' => 0,
+          ),
+        ),
+        'progress_indicator' => 'throbber',
+      ),
+      'type' => 'file_generic',
+      'weight' => 16,
     ),
   );
 
@@ -274,13 +377,14 @@ function acc_restrictions_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_below_admin_2_level',
-    'label' => 'Below Admin 2 Level (Destination)',
+    'label' => 'Name of Village (Destination)',
     'required' => 0,
     'settings' => array(
       'better_formats' => array(
         'allowed_formats' => array(
           'filtered_html' => 'filtered_html',
           'full_html' => 'full_html',
+          'php_code' => 0,
           'plain_text' => 'plain_text',
           'simple' => 'simple',
         ),
@@ -293,6 +397,9 @@ function acc_restrictions_field_default_field_instances() {
             ),
             'full_html' => array(
               'weight' => 0,
+            ),
+            'php_code' => array(
+              'weight' => 11,
             ),
             'plain_text' => array(
               'weight' => 10,
@@ -314,16 +421,14 @@ function acc_restrictions_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 7,
+      'weight' => 8,
     ),
   );
 
   // Exported field_instance: 'node-bureaucratic_requirement_within_-field_br_req_within_impact'
   $field_instances['node-bureaucratic_requirement_within_-field_br_req_within_impact'] = array(
     'bundle' => 'bureaucratic_requirement_within_',
-    'default_value' => array(
-      0 => array(),
-    ),
+    'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -361,7 +466,7 @@ function acc_restrictions_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_br_req_within_impact',
-    'label' => 'Impact',
+    'label' => 'Impact of restriction on movement within the country',
     'required' => 0,
     'settings' => array(
       'entity_translation_sync' => FALSE,
@@ -372,7 +477,7 @@ function acc_restrictions_field_default_field_instances() {
       'module' => 'field_collection',
       'settings' => array(),
       'type' => 'field_collection_embed',
-      'weight' => 13,
+      'weight' => 14,
     ),
   );
 
@@ -410,7 +515,7 @@ function acc_restrictions_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 11,
+      'weight' => 12,
     ),
   );
 
@@ -481,7 +586,7 @@ function acc_restrictions_field_default_field_instances() {
         'year_range' => '-3:+3',
       ),
       'type' => 'date_select',
-      'weight' => 1,
+      'weight' => 2,
     ),
   );
 
@@ -531,7 +636,7 @@ function acc_restrictions_field_default_field_instances() {
       'module' => 'hs_taxonomy',
       'settings' => array(),
       'type' => 'taxonomy_hs',
-      'weight' => 5,
+      'weight' => 6,
     ),
   );
 
@@ -578,7 +683,7 @@ function acc_restrictions_field_default_field_instances() {
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 10,
+      'weight' => 11,
     ),
   );
 
@@ -663,7 +768,47 @@ function acc_restrictions_field_default_field_instances() {
       'module' => 'hs_taxonomy',
       'settings' => array(),
       'type' => 'taxonomy_hs',
-      'weight' => 6,
+      'weight' => 7,
+    ),
+  );
+
+  // Exported field_instance: 'node-bureaucratic_requirement_within_-field_nationality_of_traveler'
+  $field_instances['node-bureaucratic_requirement_within_-field_nationality_of_traveler'] = array(
+    'bundle' => 'bureaucratic_requirement_within_',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 21,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_nationality_of_traveler',
+    'label' => 'Nationality of traveler(s)',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'apply_chosen' => 0,
+      ),
+      'type' => 'options_select',
+      'weight' => 5,
     ),
   );
 
@@ -736,7 +881,7 @@ function acc_restrictions_field_default_field_instances() {
         ),
       ),
       'type' => 'geocoder',
-      'weight' => 15,
+      'weight' => 17,
     ),
   );
 
@@ -776,7 +921,7 @@ function acc_restrictions_field_default_field_instances() {
         'apply_chosen' => 0,
       ),
       'type' => 'options_select',
-      'weight' => 8,
+      'weight' => 9,
     ),
   );
 
@@ -823,7 +968,7 @@ function acc_restrictions_field_default_field_instances() {
         'apply_chosen' => 0,
       ),
       'type' => 'options_select',
-      'weight' => 9,
+      'weight' => 10,
     ),
   );
 
@@ -931,8 +1076,9 @@ function acc_restrictions_field_default_field_instances() {
   // Included for use with string extractors like potx.
   t('A field replacing node title.');
   t('Access Constraint');
+  t('Action Taken Restrictions on movement within country');
   t('Administrative request submitted by');
-  t('Below Admin 2 Level (Destination)');
+  t('Attach File');
   t('Date');
   t('Description/Remarks');
   t('Geographical Location (Destination)');
@@ -940,7 +1086,10 @@ function acc_restrictions_field_default_field_instances() {
   t('How many days did it take to get an answer (positive/negative)?');
   t('If denied/delayed, by whom');
   t('Impact');
+  t('Impact of restriction on movement within the country');
   t('Mark on map');
+  t('Name of Village (Destination)');
+  t('Nationality of traveler(s)');
   t('Purpose of the administrative request');
   t('Sector(s) affected');
   t('Submission Status');
