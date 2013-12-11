@@ -254,7 +254,11 @@ function acc_restrictions_field_default_field_instances() {
   // Exported field_instance: 'node-bureaucratic_requirement_within_-field_access_constraint'
   $field_instances['node-bureaucratic_requirement_within_-field_access_constraint'] = array(
     'bundle' => 'bureaucratic_requirement_within_',
-    'default_value' => NULL,
+    'default_value' => array(
+      0 => array(
+        'tid' => 86,
+      ),
+    ),
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -522,7 +526,7 @@ function acc_restrictions_field_default_field_instances() {
   // Exported field_instance: 'node-bureaucratic_requirement_within_-field_date'
   $field_instances['node-bureaucratic_requirement_within_-field_date'] = array(
     'bundle' => 'bureaucratic_requirement_within_',
-    'default_value' => NULL,
+    'default_value' => array(),
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -585,7 +589,7 @@ function acc_restrictions_field_default_field_instances() {
         'text_parts' => array(),
         'year_range' => '-3:+3',
       ),
-      'type' => 'date_select',
+      'type' => 'date_popup',
       'weight' => 2,
     ),
   );
