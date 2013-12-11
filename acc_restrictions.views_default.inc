@@ -116,7 +116,7 @@ function acc_restrictions_views_default_views() {
   $handler->display->display_options['arguments']['field_locations_tid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['field_locations_tid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['field_locations_tid']['summary_options']['items_per_page'] = '25';
-  /* Contextual filter: Content: Date -  start date (field_date) */
+  /* Contextual filter: Content: Action Taken Date -  start date (field_date) */
   $handler->display->display_options['arguments']['field_date_value']['id'] = 'field_date_value';
   $handler->display->display_options['arguments']['field_date_value']['table'] = 'field_data_field_date';
   $handler->display->display_options['arguments']['field_date_value']['field'] = 'field_date_value';
@@ -157,6 +157,12 @@ function acc_restrictions_views_default_views() {
   $handler->display->display_options['defaults']['use_ajax'] = FALSE;
   $handler->display->display_options['use_ajax'] = TRUE;
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'full';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '15';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['pager']['options']['id'] = '0';
+  $handler->display->display_options['pager']['options']['quantity'] = '9';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'table';
   $handler->display->display_options['defaults']['style_options'] = FALSE;
@@ -175,7 +181,7 @@ function acc_restrictions_views_default_views() {
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
   $handler->display->display_options['fields']['body']['field'] = 'body';
   $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
-  /* Field: Content: Date */
+  /* Field: Content: Action Taken Date */
   $handler->display->display_options['fields']['field_date']['id'] = 'field_date';
   $handler->display->display_options['fields']['field_date']['table'] = 'field_data_field_date';
   $handler->display->display_options['fields']['field_date']['field'] = 'field_date';
@@ -269,7 +275,7 @@ function acc_restrictions_views_default_views() {
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
   $handler->display->display_options['fields']['body']['field'] = 'body';
   $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
-  /* Field: Content: Date */
+  /* Field: Content: Action Taken Date */
   $handler->display->display_options['fields']['field_date']['id'] = 'field_date';
   $handler->display->display_options['fields']['field_date']['table'] = 'field_data_field_date';
   $handler->display->display_options['fields']['field_date']['field'] = 'field_date';
@@ -637,7 +643,7 @@ function acc_restrictions_views_default_views() {
     'bureaucratic_requirement_within_' => 'bureaucratic_requirement_within_',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Content: Date -  start date (field_date) */
+  /* Filter criterion: Content: Action Taken Date -  start date (field_date) */
   $handler->display->display_options['filters']['field_date_value']['id'] = 'field_date_value';
   $handler->display->display_options['filters']['field_date_value']['table'] = 'field_data_field_date';
   $handler->display->display_options['filters']['field_date_value']['field'] = 'field_date_value';
@@ -773,7 +779,7 @@ function acc_restrictions_views_default_views() {
     'bureaucratic_requirement_within_' => 'bureaucratic_requirement_within_',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Content: Date -  start date (field_date) */
+  /* Filter criterion: Content: Action Taken Date -  start date (field_date) */
   $handler->display->display_options['filters']['field_date_value']['id'] = 'field_date_value';
   $handler->display->display_options['filters']['field_date_value']['table'] = 'field_data_field_date';
   $handler->display->display_options['filters']['field_date_value']['field'] = 'field_date_value';
@@ -1005,7 +1011,7 @@ function acc_restrictions_views_default_views() {
     'bureaucratic_requirement_within_' => 'bureaucratic_requirement_within_',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Content: Date -  start date (field_date) */
+  /* Filter criterion: Content: Action Taken Date -  start date (field_date) */
   $handler->display->display_options['filters']['field_date_value']['id'] = 'field_date_value';
   $handler->display->display_options['filters']['field_date_value']['table'] = 'field_data_field_date';
   $handler->display->display_options['filters']['field_date_value']['field'] = 'field_date_value';
@@ -1258,7 +1264,7 @@ function acc_restrictions_views_default_views() {
     'bureaucratic_requirement_within_' => 'bureaucratic_requirement_within_',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Content: Date -  start date (field_date) */
+  /* Filter criterion: Content: Action Taken Date -  start date (field_date) */
   $handler->display->display_options['filters']['field_date_value']['id'] = 'field_date_value';
   $handler->display->display_options['filters']['field_date_value']['table'] = 'field_data_field_date';
   $handler->display->display_options['filters']['field_date_value']['field'] = 'field_date_value';
@@ -2089,10 +2095,11 @@ function acc_restrictions_views_default_views() {
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Content: Date */
+  /* Field: Content: Action Taken Date */
   $handler->display->display_options['fields']['field_date']['id'] = 'field_date';
   $handler->display->display_options['fields']['field_date']['table'] = 'field_data_field_date';
   $handler->display->display_options['fields']['field_date']['field'] = 'field_date';
+  $handler->display->display_options['fields']['field_date']['label'] = 'Date';
   $handler->display->display_options['fields']['field_date']['type'] = 'date_plain';
   $handler->display->display_options['fields']['field_date']['settings'] = array(
     'format_type' => 'access_short',
@@ -2142,10 +2149,11 @@ function acc_restrictions_views_default_views() {
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Content: Date */
+  /* Field: Content: Action Taken Date */
   $handler->display->display_options['fields']['field_date']['id'] = 'field_date';
   $handler->display->display_options['fields']['field_date']['table'] = 'field_data_field_date';
   $handler->display->display_options['fields']['field_date']['field'] = 'field_date';
+  $handler->display->display_options['fields']['field_date']['label'] = 'Date';
   $handler->display->display_options['fields']['field_date']['type'] = 'date_plain';
   $handler->display->display_options['fields']['field_date']['settings'] = array(
     'format_type' => 'access_short',
@@ -2176,10 +2184,11 @@ function acc_restrictions_views_default_views() {
   $handler->display->display_options['style_options']['parent_sort'] = 0;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Content: Date */
+  /* Field: Content: Action Taken Date */
   $handler->display->display_options['fields']['field_date']['id'] = 'field_date';
   $handler->display->display_options['fields']['field_date']['table'] = 'field_data_field_date';
   $handler->display->display_options['fields']['field_date']['field'] = 'field_date';
+  $handler->display->display_options['fields']['field_date']['label'] = 'Date';
   $handler->display->display_options['fields']['field_date']['settings'] = array(
     'format_type' => 'access_short',
     'fromto' => 'value',
@@ -2194,7 +2203,7 @@ function acc_restrictions_views_default_views() {
   $handler->display->display_options['fields']['title']['group_type'] = 'count';
   $handler->display->display_options['fields']['title']['label'] = 'Number of reports';
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Content: Date -  start date (field_date) */
+  /* Sort criterion: Content: Action Taken Date -  start date (field_date) */
   $handler->display->display_options['sorts']['field_date_value']['id'] = 'field_date_value';
   $handler->display->display_options['sorts']['field_date_value']['table'] = 'field_data_field_date';
   $handler->display->display_options['sorts']['field_date_value']['field'] = 'field_date_value';
@@ -2581,9 +2590,16 @@ function acc_restrictions_views_default_views() {
     t('Org Type'),
     t('[field_organization_type] [field_request_status]'),
     t('All'),
+    t('Items per page'),
+    t('- All -'),
+    t('Offset'),
+    t('« first'),
+    t('‹ previous'),
+    t('next ›'),
+    t('last »'),
     t('Title'),
     t('Description'),
-    t('Date'),
+    t('Action Taken Date'),
     t('XLS'),
     t('field collection item from field_br_req_within_impact'),
     t('Below Admin 2 Level (Destination)'),
@@ -2664,13 +2680,7 @@ function acc_restrictions_views_default_views() {
     t('Restriction Table Number of access reports by sector and status'),
     t('Number of restriction reports per day'),
     t('Number of restriction on movement reports per day'),
-    t('Items per page'),
-    t('- All -'),
-    t('Offset'),
-    t('« first'),
-    t('‹ previous'),
-    t('next ›'),
-    t('last »'),
+    t('Date'),
     t('Restriction Number of reports per day'),
     t('Chart Number of reports per day'),
     t('Number of reports per day'),
